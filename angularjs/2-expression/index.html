@@ -1,0 +1,55 @@
+<!doctype html>
+<html ng-app="">
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+    <meta charset="utf8">
+    <link rel="stylesheet" href="css/style.css">
+  <body>
+    <h1>Les expressions</h1>
+    <hr>
+
+    <div>
+      <h2>La base</h2>
+      <p>Addition : 3 + 7 = {{ 3 + 7 }}</p>
+      <p>Multiplication : 2 * 8 = {{ 2 * 8 }}</p>
+      <p>String + String : "Test" + " " + "application" = {{"Test" + " " + "application"}}</p>
+      <input type="text" value="{{ 2 + 5 }}" />
+    </div>
+
+    <hr>
+
+    <div ng-init="quantite = 2;
+                  tableau = ['orange', 'pomme', 'poire'];
+                  object = {nom: 'Baccon', prenom: 'Erwan'}">
+      <h2>Avec variables</h2>
+      <p>Quantité : {{ quantite }}</p>
+      <input type="text" value="{{ quantite }}" />
+      <p>Fruits : {{ tableau[0] }} | {{ tableau[1] }} | {{ tableau[2] }}</p>
+      <p>Object : {{ object.nom }} {{ object.prenom }}</p>
+
+      <!-- NE PAS FAIRE -->
+      <!-- 
+        {{ if (true) { return 'OK'} }}
+        {{ throw 'test' }}
+      -->
+    </div>
+
+    <hr>
+
+    <div ng-init="couleur = 'green'">
+      <h2>Exercice 1</h2>
+      <p> Réaliser un bloc div qui change de couleur de fond en fonction d’une variable AngularJS : </p>
+      <div style="background-color: {{couleur}}">Ceci est un test</div>
+    </div>
+
+    <hr>
+
+    <div ng-init="typeInput = 'text'">
+      <h2>Exercice 2</h2>
+      <p> Réaliser un champs de formulaire input avec le type de champs en fonction d’une variable AngularJS : </p>
+      <input type="{{ typeInput }}"/>
+    </div>
+
+  </body>
+
+</html>

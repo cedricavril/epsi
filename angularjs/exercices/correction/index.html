@@ -1,0 +1,21 @@
+<!doctype html>
+<html ng-app="myApp">
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+
+    <div ng-controller="ColorController as color">
+        <input type="number" ng-model="color.numberValue" ng-change="color.changeText()" />
+        <p ng-class="color.cssClass">{{color.message}}</p>
+    </div>
+
+    <!-- Load all script here -->
+    <script src="myApp.js"></script>
+    <script src="color/color.controller.js"></script>
+</body>
+
+</html>

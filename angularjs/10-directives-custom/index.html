@@ -1,0 +1,61 @@
+<!doctype html>
+<html ng-app="myApp" lang="fr-FR">
+<meta charset="utf8">
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <h1>Directive</h1>
+  <hr>
+  <h2>Les 4 façons d'afficher une directive</h2>
+  <h3>restrict:'E'</h3>
+  <app-test-directive></app-test-directive>
+
+  <h3>restrict:'A'</h3>
+  <div app-test-directive></div>
+
+  <h3>restrict:'C'</h3>
+  <div class="app-test-directive"></div>
+
+  <h3>restrict:'M'</h3>
+  <!-- DEPRECATED a ne plus utiliser 
+    ne fonctione pas de base sans une configuration deprecated elle aussi -->
+  <!-- directive: app-test-directive -->
+  <hr>
+
+
+  <div ng-controller="UserController as user">
+    <h2>Transmettre une variable ou une valeur en dur</h2>
+    <app-count-display count=user.count></app-count-display>
+    <app-count-display count=15></app-count-display>
+
+
+    <h2>Condition d'affichage dans une directive</h2>
+    <button ng-click="user.displayOrHideLoader()">Display / Hide Loader</button>
+    {{user.booleanLoader}}
+    <app-loader is-display=user.booleanLoader></app-loader>
+
+    <h2>Directive qui porte la logique d'affichage</h2>
+    <app-spoiler text-button="user.textButton" text-to-display="user.textToDisplay"></app-spoiler>
+
+  </div>
+  <!-- <p>Hors controller</p>
+  <app-count-display count=user.count></app-count-display>
+  <app-count-display count=10></app-count-display> -->
+
+
+
+
+
+  <!-- Load all script here -->
+  <script src="app.js"></script>
+  <script src="user/user.controller.js"></script>
+  <script src="directives/test.directive.js"></script>
+  <script src="directives/count-display.directive.js"></script>
+  <script src="directives/loader.directive.js"></script>
+  <script src="directives/spoiler.directive.js"></script>
+</body>
+
+</html>

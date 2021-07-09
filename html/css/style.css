@@ -1,0 +1,105 @@
+/* gérer plutôt les height en js */
+
+*{
+	border: 1px dashed #F1F1F1;
+/*	margin: 5px;*/
+	color: #F1F1F1;
+	text-align: center;
+}
+
+body{
+	background-color: #191919;
+	width: 100%;
+	margin: 0;
+}
+
+header{
+	background-color: blue;
+}
+
+nav{
+	background-color: orange;
+	color: #191919;
+}
+
+nav ul{
+	width: 50%;
+	margin: 0;
+	height: inherit;
+}
+
+nav ul li{
+	width: 32%;
+	height: inherit;
+}
+
+main{
+	background-color: red;
+}
+
+footer{
+	background-color: green;
+}
+
+section{
+	background-color: grey;
+	height: 33%;
+	width: 100%;
+	float: left;
+}
+
+#main_section{
+	height: 25%;
+}
+
+section div{
+	width: 25%;
+	margin-left: 5%;
+}
+
+section div img{
+	width: inherit;
+}
+
+div{
+	float: left;
+}
+
+ul{
+	list-style-type: none;
+	float: left;
+}
+
+li{
+	float: left;
+}
+
+#logo{
+	width: 10%;
+	height: inherit;
+	color: #191919;
+	margin: 0;
+}
+
+nav ul{
+	float: right;
+	color: #191919;
+}
+
+nav ul li{
+	color: #191919;
+}
+
+footer ul{
+	width: 100%;
+	height: 100%;
+}
+
+footer ul li{
+	width: 32%;	
+	height: 100%;
+}
+
+#divImg{
+	width: inherit;
+}

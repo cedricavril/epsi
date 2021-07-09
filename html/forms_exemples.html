@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>formulaires</title>
+</head>
+<style type="text/css">
+fieldset{
+	padding: 20px;
+	margin: 20px;
+}
+.flex-container{
+	display: flex;
+	background-color: red;
+/*	flex-direction: row-reverse;*/
+	flex-wrap: wrap;
+}
+.flex-container > div{
+	background-color: yellow;
+	margin: 10px;
+	text-align: center;
+	line-height: 75px;
+	padding: 20px;
+	font-size: 30px;
+	width: 100px;
+}
+
+</style>
+<body style="background-color: #191919; color: #F1F1F1">
+	<h2>Formulaires</h2>
+
+<!-- Datalist -->
+<fieldset><legend>Datalist</legend>
+	<form action="/action.php">
+		<input list="navigateurs" name="navigateurs">
+		<datalist id="navigateurs">
+			<option value="IE"></option>
+			<option value="Chrome"></option>
+			<option value="Firefox"></option>
+		</datalist>
+		<input type="submit">
+	</form>
+</fieldset>
+<!-- js dans les attributs -->
+<fieldset><legend>js dans les attributs</legend>
+	<form oninput="x.value = parseInt(a.value) + parseInt(b.value)">
+		<input type="range" name="a" value="50">
+		<input type="number" name="b" value="50">
+		<output name="x" for="a b"></output>
+		<br><br>
+		<input type="submit">
+	</form>
+</fieldset>
+
+<div class='flex-container'>
+	<div>1</div>
+	<div>2</div>
+	<div>3</div>
+	<div>4</div>
+	<div>5</div>
+	<div>6</div>
+	<div>7</div>
+	<div>8</div>
+	<div>9</div>
+	<div>10</div>
+	<div>11</div>
+	<div>12</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!doctype html>
+<html ng-app="myApp">
+
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  {{name}}
+  <div ng-controller="UserController as user">
+    <h2>Controller</h2>
+    <p>{{user.name}}</p>
+
+    <p>{{user.name + " " + user.subName}}</p>
+
+    <p>{{user.fullName()}}</p>
+
+    <p>{{user.displayTexte(user.name)}}</p>
+
+    <input type="text" ng-model="user.initValue">
+
+    {{user.initValue}}
+
+    <button ng-click="user.handleClick()">Clic</button>
+
+  </div>
+
+  <!-- Load all script here -->
+  <script src="app.js"></script>
+  <script src="user/user.controller.js"></script>
+</body>
+
+</html>

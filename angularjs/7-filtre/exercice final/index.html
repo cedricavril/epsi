@@ -1,0 +1,37 @@
+<!doctype html>
+<html ng-app="myApp">
+
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+</head>
+
+<body>
+
+  <div ng-controller="ShoppingController as shopping">
+
+    <input type="text" ng-model="shopping.filterValue">
+
+    <table>
+      <thead>
+        <tr>
+          <th>Name <button ng-click="shopping.changeOrder('name')">Order by name</button></th>
+          <th>Color <button ng-click="shopping.changeOrder('color')">Order by color</button></th>
+          <th>Count<button ng-click="shopping.changeOrder('count')">Order by count</button></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="element in shopping.listObject | filter: {name: shopping.filterValue} | orderBy: shopping.columnOrder : shopping.reverse">
+          <td>{{element.name}}</td>
+          <td>{{element.color}}</td>
+          <td>{{element.count}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Load all script here -->
+  <script src="app.js"></script>
+  <script src="shopping/shopping.controller.js"></script>
+</body>
+
+</html>

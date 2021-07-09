@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="d938aba1-3f14-43bc-b702-820da8d882ea" name="Quantical Solutions Mooc" url="http://goyave.o2switch.net">
+        <fileTransfer host="goyave.o2switch.net" port="21" rootFolder="/mooc">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+          <option name="port" value="21" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

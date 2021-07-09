@@ -1,0 +1,55 @@
+<!doctype html>
+<html ng-app="">
+
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <h1>Expression dans l'HTML</h1>
+
+  <div>
+    <h2>Sans variables</h2>
+    {{7 + 2}}
+    {{5 * 3}}
+    {{"texte"}}
+    {{"texte" + " " + "text2"}}
+  </div>
+
+  <div ng-init="quantite = 2;
+                texte='texte';
+                tableau=['orange', 'cerise', 'kiwi']">
+
+    <h2>Avec variables</h2>
+    {{quantite}}
+    {{texte}}
+    {{quantite * 2 }}
+    {{texte + " texte2"}}
+    {{tableau}}
+    {{tableau[0]}}
+    <input type="text" value="{{quantite}}">
+
+
+    <!-- A NE PAS FAIRE -->
+    <!-- 
+      {{if (true) {alert("Dedans")}}}
+
+      {{ for () {
+  
+      }}}
+
+      {{ throw}}
+    -->
+
+    <!-- Ça marche mais à ne pas faire -->
+    {{ quantite ? "c'est vrai" : "c'est faux" }}
+
+
+
+
+  </div>
+</body>
+
+</html>

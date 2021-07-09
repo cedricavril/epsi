@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr-FR">
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<title>Tests</title>
+</head>
+<body>
+	<header>
+		header
+		<nav>
+			<!-- logo -->
+			<div id="logo">logo</div>
+			<!-- menu -->
+			<ul>
+				ul
+				<li>li</li>
+				<li>li</li>
+				<li>li</li>
+			</ul>
+		</nav>
+	</header>
+	<main>
+		main
+		<section>
+			section<br>
+			<div>div</div>
+			<div>div</div>
+			<div>div</div>
+		</section>
+		<section id="main_section">
+			section
+			<div id="divImg">
+				div-img
+				<img src="">
+			</div>
+		</section>
+		<section>section</section>
+	</main>
+	<footer>
+		footer
+		<ul>
+			<li>li</li>
+			<li>li</li>
+			<li>li</li>
+		</ul>
+	</footer>
+</body>
+<script type="text/javascript">
+// à mettre aussi dans resize()
+	var windowHeight = window.innerHeight;
+    document.body.style.height = windowHeight + "px";
+    document.querySelector('header').style.height = windowHeight / 4 + "px";
+    document.querySelector('nav').style.height = windowHeight / 10 + "px";
+    document.querySelector('main').style.height = windowHeight / 2 + "px";
+    document.querySelector('footer').style.height = windowHeight / 4 + "px";
+</script>
+</html>

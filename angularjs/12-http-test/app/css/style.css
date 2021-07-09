@@ -1,0 +1,114 @@
+body {
+    background-color: #1E1E1E;
+    color: #F1F1F1;
+}
+
+.container {
+    margin: 20px auto;
+    display: block;
+    width: 50%;
+    padding: 4px;
+    border: 1px solid grey;
+    border-radius: 5px;
+    box-shadow: 2px 2px 7px 1px grey;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.container a {
+    color: darkgreen;
+}
+
+.container a:hover {
+    color: whitesmoke;
+}
+
+.container a:visited {
+    color: greenyellow;
+}
+
+.greenColor {
+    color: greenyellow;
+}
+
+.redColor {
+    color: red;
+}
+
+.blueColor {
+    color: blue;
+}
+
+input, textarea, select {
+    font-family: inherit;
+    margin: 10px;
+}
+
+.cache{
+    display: none;
+}
+
+.montre{
+    display: block;
+}
+
+.classMouseOver {
+    display: block;
+    background-color: violet;
+}
+
+.text {
+    cursor: default;
+}
+
+.inputClass {
+    color: blueviolet;
+}
+
+table {
+    background-color: inherit;
+    border-collapse: collapse;
+    border-width: 2px;
+    border-color: #7ea8f8;
+    border-style: solid;
+    color: blueviolet;
+    width: 100%;
+}
+  
+table td, table th {
+    border-width: 2px;
+    border-color: #7ea8f8;
+    border-style: solid;
+    padding: 5px;
+}
+
+table thead {
+    background-color: #7ea8f8;
+}
+
+i.arrow {
+    font-size: x-large;
+}
+
+i.arrow::before {
+    content: "↑";
+}
+
+button {
+    display: block;
+    margin: auto;
+}
+
+label {
+	display: block;
+	text-align: left;
+	margin-left: 10px;
+}
+
+.align-right {
+    text-align: right;
+}
+
+.app-error {
+    background-color: lightcoral;
+}

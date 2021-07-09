@@ -1,0 +1,16 @@
+<h2>Exercice 2</h2>
+
+<input type="text" ng-model="todoList.addInputValue" />
+<button ng-click="todoList.addValue()">Add</button>
+
+<div ng-repeat="element in todoList.elements">
+    <span ng-if="!element.isModeUpdate">
+        {{element.name}}
+        <button ng-click="todoList.passInModeUpdate($index)">Update</button>
+    </span>
+    <span ng-if="element.isModeUpdate">
+        <input type="text" ng-model="element.name" />
+        <button ng-click="todoList.exitModeUpdate($index)">Save</button>
+    </span>
+    <button ng-click="todoList.removeElement($index)">Remove</button>
+</div>

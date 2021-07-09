@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+    <body>
+    <h1>Hello World with jQuery</h1>
+    Write some text in textbox:
+    <input id="hello-input" type="text" />
+    <h2 id="hello-output">Hello </h2>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+      var inputField = $('#hello-input');
+      var label = $('#hello-output');
+      
+      inputField.on('keyup', function() {
+        var value = inputField.val();
+        label.html('Hello ' + value);
+      });
+    </script>
+  </body>
+</html>

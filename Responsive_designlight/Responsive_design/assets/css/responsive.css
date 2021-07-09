@@ -1,0 +1,119 @@
+@media only screen and (min-width: 1201px) {
+
+	/* Pour desktop: */
+
+	.col-xl-1 {width: 8.33%!important;}
+	.col-xl-2 {width: 16.66%!important;}
+	.col-xl-3 {width: 25%!important;}
+	.col-xl-4 {width: 33.33%!important;}
+	.col-xl-5 {width: 41.66%!important;}
+	.col-xl-6 {width: 50%!important;}
+	.col-xl-7 {width: 58.33%!important;}
+	.col-xl-8 {width: 66.66%!important;}
+	.col-xl-9 {width: 75%!important;}
+	.col-xl-10 {width: 83.33%!important;}
+	.col-xl-11 {width: 91.66%!important;}
+	.col-xl-12 {width: 100%!important;}
+
+	/*Fin des colonnes*/
+
+	navresp, #blurAll, .hamburglar {
+		display: none;
+	}
+}
+
+@media only screen and (min-width: 861px) and (max-width: 1200px) {
+
+	/* Pour grosses tablettes: */
+
+	.col-l-1 {width: 8.33%!important;}
+	.col-l-2 {width: 16.66%!important;}
+	.col-l-3 {width: 25%!important;}
+	.col-l-4 {width: 33.33%!important;}
+	.col-l-5 {width: 41.66%!important;}
+	.col-l-6 {width: 50%!important;}
+	.col-l-7 {width: 58.33%!important;}
+	.col-l-8 {width: 66.66%!important;}
+	.col-l-9 {width: 75%!important;}
+	.col-l-10 {width: 83.33%!important;}
+	.col-l-11 {width: 91.66%!important;}
+	.col-l-12 {width: 100%!important;}
+
+	/*Fin des colonnes*/
+
+	navresp, #blurAll, .hamburglar {
+		display: none;
+	}
+}
+
+@media only screen and (min-width: 541px) and (max-width: 860px) {
+
+	/* Pour tablettes: */
+
+	.col-m-1 {width: 8.33%!important;}
+	.col-m-2 {width: 16.66%!important;}
+	.col-m-3 {width: 25%!important;}
+	.col-m-4 {width: 33.33%!important;}
+	.col-m-5 {width: 41.66%!important;}
+	.col-m-6 {width: 50%!important;}
+	.col-m-7 {width: 58.33%!important;}
+	.col-m-8 {width: 66.66%!important;}
+	.col-m-9 {width: 75%!important;}
+	.col-m-10 {width: 83.33%!important;}
+	.col-m-11 {width: 91.66%!important;}
+	.col-m-12 {width: 100%!important;}
+
+	/*Fin des colonnes*/
+
+	nav {
+		display: none;
+	}
+}
+
+@media only screen and (min-width: 251px) and (max-width: 540px) {
+
+	/* Pour mobiles: */
+
+	.col-sm-1 {width: 8.33%!important;}
+	.col-sm-2 {width: 16.66%!important;}
+	.col-sm-3 {width: 25%!important;}
+	.col-sm-4 {width: 33.33%!important;}
+	.col-sm-5 {width: 41.66%!important;}
+	.col-sm-6 {width: 50%!important;}
+	.col-sm-7 {width: 58.33%!important;}
+	.col-sm-8 {width: 66.66%!important;}
+	.col-sm-9 {width: 75%!important;}
+	.col-sm-10 {width: 83.33%!important;}
+	.col-sm-11 {width: 91.66%!important;}
+	.col-sm-12 {width: 100%!important;}
+
+  	/*Fin des colonnes*/
+
+	nav {
+		display: none;
+	}
+}
+
+@media only screen and (max-width: 250px) {
+
+	/* Pour montres: */
+
+	.col-xs-1 {width: 8.33%!important;}
+	.col-xs-2 {width: 16.66%!important;}
+	.col-xs-3 {width: 25%!important;}
+	.col-xs-4 {width: 33.33%!important;}
+	.col-xs-5 {width: 41.66%!important;}
+	.col-xs-6 {width: 50%!important;}
+	.col-xs-7 {width: 58.33%!important;}
+	.col-xs-8 {width: 66.66%!important;}
+	.col-xs-9 {width: 75%!important;}
+	.col-xs-10 {width: 83.33%!important;}
+	.col-xs-11 {width: 91.66%!important;}
+	.col-xs-12 {width: 100%!important;}
+
+  	/*Fin des colonnes*/
+
+	nav {
+		display: none;
+	}
+}

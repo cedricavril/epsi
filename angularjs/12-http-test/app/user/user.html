@@ -1,0 +1,28 @@
+<p>{{user.name}}</p>
+
+<h3>GET "/"</h3>
+<p>{{user.resultByGet}}</p>
+
+<h3>GET "/users"</h3>
+<button ng-click="user.getUsers()">GET "/users"</button>
+<p>{{user.tableResultByGet[16]}}</p>
+<p>{{user.tableResultByGet[16].name}}</p>
+
+<h3>POST "/users"</h3>
+<button ng-click="user.postUsers()">POST "/users"</button>
+<p>{{user.resultByPost}}</p>
+
+<h3>PUT "/users/16"</h3>
+<button ng-click="user.putUsers()">PUT "/users/16"</button>
+<p>{{user.resultByPut}}</p>
+
+<h3>DELETE "/users/16"</h3>
+<button ng-click="user.deleteUsers()">DELETE "/users/16"</button>
+<p>{{user.resultByDelete}}</p>
+
+
+<h3>Test asynchrone</h3>
+<button ng-click="user.getAsyncUsers()">getAsyncUsers</button>
+<p>Variable avant finalisation de l'appel serveur : {{user.testAsyncBefore}}</p>
+<p>Variable après finalisation de l'appel serveur : {{user.testAsyncAfter[16].name}}</p>
+<p>Appel serveur terminé : {{user.asyncDisplayData[16].name}}</p>

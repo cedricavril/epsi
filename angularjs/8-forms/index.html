@@ -1,0 +1,180 @@
+<!doctype html>
+<html ng-app="myApp">
+
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    h2 {
+      color: red;
+    }
+
+    .h2 {
+      color: green!important;
+    }
+
+    .app-error {
+      background-color: red;
+    }
+
+    .app-message-error {
+      color: red;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h2>TEST</h2>
+  <br>
+  <span class="h2">TEST class</span>
+
+  <br>
+  <br>
+
+
+  <div ng-controller="FormController as formController">
+    {{formController.name}}
+    <form>
+      <div>
+        <input type="text" ng-model="formController.valueTexte" />
+        {{formController.valueTexte}}
+      </div>
+
+      <div>
+        <input type="number" ng-model="formController.valueNumber" />
+        {{formController.valueNumber}}
+      </div>
+
+      <div>
+        <input type="color" ng-model="formController.valueColor" />
+        {{formController.valueColor}}
+      </div>
+
+      <div>
+        <input type="date" ng-model="formController.valueDate" />
+        {{formController.valueDate}}
+      </div>
+
+      <div>
+        <input type="file" ng-model="formController.valueFile" />
+        {{formController.valueFile}}
+      </div>
+
+      <div>
+        <input type="checkbox" ng-model="formController.valueCheckbox" /> Checkbox
+        {{formController.valueCheckbox}}
+      </div>
+
+      <div>
+        <label>
+          <input type="radio" value="homme" name="sexe" ng-model="formController.valueRadio" /> Homme
+          <input type="radio" value="femme" name="sexe" ng-model="formController.valueRadio" /> Femme
+        </label>
+        {{formController.valueRadio}}
+      </div>
+
+      <div>
+        <label>
+          <input type="radio" value="1" name="quantiteRadio" ng-model="formController.valueRadioQuantite" /> 1
+          <input type="radio" value="2" name="quantiteRadio" ng-model="formController.valueRadioQuantite" /> 2
+        </label>
+        {{formController.valueRadioQuantite}}
+      </div>
+
+      <div>
+        <textarea ng-model="formController.valueTextArea"></textarea>
+        {{formController.valueTextArea}}
+      </div>
+
+      <div>
+        <select name="exempleSelectValue" ng-model="formController.exempleNativeSelectValue">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+        </select>
+      </div>
+
+      <div>
+        <select ng-model="formController.exempleSelectValue">
+          <option value="">Choisissez une option...</option>
+          <option ng-repeat="element in formController.listString" value="{{element}}">{{element}}</option>
+        </select>
+        {{formController.exempleSelectValue}}
+      </div>
+
+
+      <hr>
+      <select ng-model="formController.selectValue" ng-options="element for element in formController.listString">
+
+      </select>
+      {{formController.selectValue}}
+
+      <select ng-model="formController.selectComplexValue" ng-options="element.color for element in formController.listObject">
+
+      </select>
+      {{formController.selectComplexValue}}
+
+    </form>
+
+    <br>
+    <br>
+    <br>
+    <h2>Form</h2>
+    <form name="formForTest" ng-submit="formController.handleSubmit()">
+      <div>
+        <input type="text" ng-model="formController.valueTexteForm1" />
+        {{formController.valueTexte}}
+      </div>
+      <div>
+        <input type="text" ng-model="formController.valueTexteForm2" ng-disabled="formController.conditionFalse" />
+      </div>
+      <div>
+        <input type="text" ng-model="formController.valueTexteForm3" ng-readonly="formController.conditionFalse" />
+      </div>
+      <button type="reset">Reset</button>
+      <button type="submit">Submit</button>
+    </form>
+    <br>
+    <br>
+    <br>
+    <form name="formForTest" ng-submit="formController.handleSubmit()">
+      <span class="app-message-error" ng-if="formForTest.$invalid && formForTest.$dirty">Il y a une
+        erreur sur le formulaire !</span>
+      <div>
+        <label for="username">Username</label>
+        <input id="username" name="username" type="text" ng-class="{'app-error': formForTest.username.$invalid && formForTest.username.$dirty }"
+          ng-model="formController.formForTestInputs.valueTexteForm1" required />
+        <span class="app-message-error" ng-if="formForTest.username.$invalid && formForTest.username.$dirty">Il y a une
+          erreur !</span>
+      </div>
+      <div>
+        <label for="password">Password</label>
+        <input id="password" name="password" type="password" ng-class="{'app-error': formForTest.password.$invalid && formForTest.password.$dirty }"
+          ng-model="formController.formForTestInputs.valuePassword" minlength="4" maxlength="10" required />
+        <span class="app-message-error" ng-if="formForTest.password.$invalid && formForTest.password.$dirty">Il y a une
+          erreur !</span>
+      </div>
+      <div>
+        <label for="count">Count</label>
+        <input id="count" type="number" name="count" ng-class="{'app-error': formForTest.count.$invalid && formForTest.count.$dirty }"
+          ng-model="formController.formForTestInputs.valueCount" min="4" max="10" required />
+        <span class="app-message-error" ng-if="formForTest.count.$invalid && formForTest.count.$dirty">Il y a une
+          erreur !</span>
+
+      </div>
+      <button type="submit" ng-disabled="formForTest.$invalid">Submit</button>
+    </form>
+
+  </div>
+  <br>
+  <br>
+  <br>
+
+
+  <!-- Load all script here -->
+  <script src="app.js"></script>
+  <script src="form/form.controller.js"></script>
+</body>
+
+</html>

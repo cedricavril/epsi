@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="fr-FR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="referrer" content="origin">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <title>Responsive Design</title>
+    <link rel="icon" type="image/png" href="assets/img/favicon.png">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/responsive.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <div id="blurAll"></div>
+        <div id="hamburger" class="hamburglar is-closed">
+
+            <div class="burger-icon">
+                <div class="burger-container">
+                    <span class="burger-bun-top"></span>
+                    <span class="burger-filling"></span>
+                    <span class="burger-bun-bot"></span>
+                </div>
+            </div>
+
+            <!-- svg ring containter -->
+            <div class="burger-ring">
+                <svg class="svg-ring">
+                    <path class="path" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="4" d="M 34 2 C 16.3 2 2 16.3 2 34 s 14.3 32 32 32 s 32 -14.3 32 -32 S 51.7 2 34 2" />
+                </svg>
+            </div>
+            <!-- the masked path that animates the fill to the ring -->
+
+            <svg width="0" height="0">
+                <mask id="mask">
+                    <path xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#ff0000" stroke-miterlimit="10" stroke-width="4" d="M 34 2 c 11.6 0 21.8 6.2 27.4 15.5 c 2.9 4.8 5 16.5 -9.4 16.5 h -4" />
+                </mask>
+            </svg>
+            <div class="path-burger">
+                <div class="animate-path">
+                    <div class="path-rotation"></div>
+                </div>
+            </div>
+
+        </div>
+        <nav>
+            <ul>
+                <li>
+                    <img src="assets/img/logo.png" alt="logo">
+                </li>
+                <li>
+                    <span>
+                        <a href="/">Home</a>
+                        <span class="underliner"></span>
+                    </span>
+                </li>
+                <li>
+                    <span>
+                        <a href="blog">Blog</a>
+                        <span class="underliner"></span>
+                        <ul class="dropdown">
+                            <li>
+                                <a href="#">New Tech</a>
+                            </li>
+                            <li>
+                                <a href="#">Quantic</a>
+                            </li>
+                            <li>
+                                <a href="#">Helios Canon</a>
+                            </li>
+                        </ul>
+                    </span>
+                </li>
+                <li>
+                    <span>
+                        <a href="contact">Contact</a>
+                        <span class="underliner"></span>
+                    </span>
+                </li>
+            </ul>
+        </nav>
+        <navresp>
+            <ul>
+                <li>
+                    <img src="assets/img/logo.png" alt="logo">
+                </li>
+                <li>
+                    <span>
+                        <a href="/">Home</a>
+                        <span class="underliner"></span>
+                    </span>
+                </li>
+                <li>
+                    <span>
+                        <a href="blog">Blog</a>
+                        <span class="underliner"></span>
+                        <ul>
+                            <li>
+                                <a href="#">New Tech</a>
+                            </li>
+                            <li>
+                                <a href="#">Quantic</a>
+                            </li>
+                            <li>
+                                <a href="#">Helios Canon</a>
+                            </li>
+                        </ul>
+                    </span>
+                </li>
+                <li>
+                    <span>
+                        <a href="contact">Contact</a>
+                        <span class="underliner"></span>
+                    </span>
+                </li>
+            </ul>
+        </navresp>
+        <span class="next">slide</span>
+    </header>
+    <main>
+        <section>
+            <div class="blocks col-sm-12">
+                <p>Donec rutrum congue leo eget malesuada. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque.</p>
+            </div>
+            <div class="blocks col-sm-12">
+                <p>Donec rutrum congue leo eget malesuada. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque.</p>
+            </div>
+            <div class="blocks col-sm-12">
+                <p>Donec rutrum congue leo eget malesuada. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque.</p>
+            </div>
+        </section>
+        <section id="center">
+            <div class="col-sm-12">
+                <h3>Lorem Ipsum</h3>
+                <p>Donec rutrum congue leo eget malesuada. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Sed porttitor lectus nibh.</p>
+                <p>Donec rutrum congue leo eget malesuada. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque.</p>
+            </div>
+            <img src="assets/img/lum.jpg">
+        </section>
+        <section class="col-sm-12 col-xs-12">
+            <p>Donec rutrum congue leo eget malesuada. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Sed porttitor lectus nibh.
+            <br>
+            Quisque velit nisi, pretium ut lacinia in, elementum id enim. Sed porttitor lectus nibh. Donec rutrum congue leo eget malesuada.
+            <br>
+            Quisque velit nisi, pretium ut lacinia in, elementum id enim. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Donec rutrum congue leo eget malesuada.</p>
+        </section>
+    </main>
+    <footer>
+        <div class="footers">
+            <label>Navigation</label>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">CGU</a></li>
+                <li><a href="#">Mentions Légales</a></li>
+                <li><a href="#">Cookies</a></li>
+            </ul>
+        </div>
+        <div class="footers">
+            <label>Derniers articles</label>
+            <ul>
+                <li>
+                    <a href="#">New Helios FHD</a>
+                    <i>le 23 Décembre 2018</i>
+                </li>
+                <li>
+                    <a href="#">Quantum Computing</a>
+                    <i>le 3 Janvier 2019</i>
+                </li>
+                <li>
+                    <a href="#">Rotating singularities</a>
+                    <i>le 12 Mars 2019</i>
+                </li>
+                <li>
+                    <a href="#">Blue Brain Clinical Theorics</a>
+                    <i>le 16 Mai 2019</i>
+                </li>
+            </ul>
+        </div>
+        <div class="footers">
+            <label>Dernier article</label>
+            <img src="assets/img/spaceX.jpg">
+           <a href="#">SpaceX innovating systems</a>
+            <i>le 22 Septembre 2019</i>
+        </div>
+        <div class="footers">
+            <label id="labelForm">Contact</label>
+            <form method="">
+                <div>
+                    <label for="pseudo">Pseudo</label>
+                    <input type="text" name="pseudo" placeholder="tape ton nom">
+                </div>
+                <div>
+                    <label for="mail">E-mail</label>
+                    <input type="email" name="mail" placeholder="tape ton e-mail">
+                </div>
+                <div>
+                    <label for="message">Message</label>
+                    <textarea name="message"></textarea>
+                </div>
+                <div>
+                    <button type="submit">Valider</button>
+                    <button type="reset">Effacer</button>
+                </div>
+            </form>
+        </div>
+    </footer>
+    <div id="retourHaut" class="top">
+		<span>
+			<svg width="25" height="25" viewBox="0 0 32 32">
+				<path d="M26.297 20.797l-2.594 2.578c-0.391 0.391-1.016 0.391-1.406 0l-8.297-8.297-8.297 8.297c-0.391 0.391-1.016 0.391-1.406 0l-2.594-2.578c-0.391-0.391-0.391-1.031 0-1.422l11.594-11.578c0.391-0.391 1.016-0.391 1.406 0l11.594 11.578c0.391 0.391 0.391 1.031 0 1.422z"></path>
+			</svg>
+		</span>
+    </div>
+    <script type="text/javascript" src="assets/js/script.js"></script>
+</body>
+</html>

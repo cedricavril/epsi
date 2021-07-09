@@ -1,0 +1,54 @@
+<!doctype html>
+<html ng-app="myApp">
+
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+
+  <div ng-controller="ResetController as resetCtrl">
+    <h2>RESET EXERCICE</h2>
+    <form novalidate>
+      <label for="username">Username :
+        <input type="text" id="username" name="username" ng-model="resetCtrl.formInputs.username" required>
+      </label>
+
+      <label for="name">Name :
+        <input type="text" id="name" name="name" ng-model="resetCtrl.formInputs.name" required>
+      </label>
+
+      <button ng-click="resetCtrl.resetToOldValue()">Reset</button>
+    </form>
+  </div>
+
+  <div ng-controller="LoginController as login">
+    <h2>LOGIN EXERCICE</h2>
+    <form name="loginForm" ng-submit="login.submit()">
+      <div>
+        <label for="username">Username :
+          <input type="text" id="username" name="username" ng-model="login.formInputs.username" required>
+        </label>
+        <span class="app-error" ng-if="loginForm.username.$dirty && loginForm.username.$invalid">username input invalid
+          !</span>
+      </div>
+
+      <div>
+        <label for="password">Password :</label>
+        <input type="password" id="password" name="password" ng-model="login.formInputs.password" required>
+        <span class="app-error" ng-if="loginForm.password.$dirty && loginForm.password.$invalid">password input invalid
+          !</span>
+      </div>
+
+      <button type="submit" ng-disabled="loginForm.$invalid">Submit</button>
+      <form>
+  </div>
+
+  <!-- Load all script here -->
+  <script src="app.js"></script>
+  <script src="reset/reset.controller.js"></script>
+  <script src="login/login.controller.js"></script>
+</body>
+
+</html>

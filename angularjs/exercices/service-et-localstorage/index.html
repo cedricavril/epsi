@@ -1,0 +1,32 @@
+<!DOCTYPE html >
+<html ng-app="myApp">
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Exercices angular - local storage service</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='css/style.css'>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+</head>
+<body>
+
+<form name="formForTest" ng-submit="formController.handleFormSubmit()" ng-controller="FormController as formController" class="container"><legend>Formulaire</legend>
+  <!-- {{formForTest.$valid}}
+  {{formForTest.user.$valid}} -->
+  <label>Nom : <input type="text" ng-model="formController.user.nom" required></label>{{formController.user.nom}}
+  <button ng-click = "formController.stockeNom()">Stocke</button>
+  <label>E-mail : <input type="email" ng-model="formController.user.email"></label>{{formController.user.email}}
+  <label>Password : <input type="password" name="password" ng-class="{'app-error': !formForTest.password.$valid}" ng-model="formController.user.motDePasse" ng-minlength="4" required></label>{{formController.user.motDePasse}}
+  <label>Nombre de cheveux : <input type="number" ng-model="formController.user.nombreDeCheveux"></label>{{formController.user.nombreDeCheveux}}
+  <label>Sexe : <input type="radio" ng-model="formController.user.sexe" value="Femme">Femme<input type="radio" ng-model="formController.user.sexe" value="Homme">Homme</label>{{formController.user.sexe}}
+  <label>Un string : <select ng-model = "formController.user.string" ng-options = "element for element in formController.listString" ></select></label>
+  <textarea placeholder="Talk about yourself..." rows="5" cols="33" ng-model="formController.user.description"></textarea>{{formController.user.description}}
+  <label class = "align-right"><input type="submit" > <input type="reset" ></label>
+</form>
+
+
+<script src="js/app.js"></script>
+<script src="js/form.js"></script>
+<script src="js/local-storage-service.js"></script>
+</body>
+</html>

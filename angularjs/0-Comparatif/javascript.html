@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+    <body>
+    <h1>Hello World with pure JavaScript</h1>
+    Write some text in textbox:
+    <input id="hello-input" type="text" />
+    <h2 id="hello-output">Hello </h2>
+    
+    <script>
+      var inputField = document.getElementById('hello-input');
+      var label = document.getElementById('hello-output');
+      
+      var handleKeyup = function() {
+        var value = inputField.value;
+        label.innerHTML = 'Hello ' + value;
+      }
+      
+      if (document.addEventListener) {
+        document.addEventListener('keyup', handleKeyup);
+      } else if (document.attachEvent) {
+        document.attachEvent('keyup', handleKeyup);
+      }
+    </script>
+  </body>
+</html>

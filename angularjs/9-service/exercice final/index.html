@@ -1,0 +1,44 @@
+<!doctype html>
+<html ng-app="myApp">
+
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+</head>
+
+<body>
+
+  <div ng-controller="StorageController as storage">
+    <div>
+      <button ng-click="storage.setItem(storage.storageConstant.KEY_USER, 'Value key user')">Set KEY_USER</button>
+    </div>
+    <div>
+      <button ng-click="storage.setItem(storage.storageConstant.KEY_TOKEN, 'Value key token')">Set KEY_TOKEN</button>
+    </div>
+    <div>
+      <button ng-click="storage.setItem(storage.storageConstant.KEY_NAME, 'Value key name')">Set KEY_NAME</button>
+    </div>
+    <div>
+      <button ng-click="storage.getItem(storage.storageConstant.KEY_USER)">Get KEY_USER</button>
+    </div>
+    <div>
+      <button ng-click="storage.getItem(storage.storageConstant.KEY_TOKEN)">Get KEY_TOKEN</button>
+    </div>
+    <div>
+      <button ng-click="storage.getItem(storage.storageConstant.KEY_NAME)">Get KEY_NAME</button>
+    </div>
+    <div>
+      <button ng-click="storage.removeItem(storage.storageConstant.KEY_USER)">Remove KEY_USER</button>
+    </div>
+    <div>
+      <button ng-click="storage.clearItems()">Clear KEY_USER</button>
+    </div>
+  </div>
+
+  <!-- Load all script here -->
+  <script src="app.js"></script>
+  <script src="storage/storage.controller.js"></script>
+  <script src="services/storage.service.js"></script>
+  <script src="constant/storage.constant.js"></script>
+</body>
+
+</html>

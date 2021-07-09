@@ -1,0 +1,24 @@
+<!doctype html>
+<html ng-app="myApp">
+
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <div ng-controller="UserController as user">
+    {{user.urlAbs}}
+    {{user.tamponDuService()}}
+  </div>
+
+  <!-- Load all script here -->
+  <script src="app.js"></script>
+  <!-- User feature-->
+  <script src="user/user.controller.js"></script>
+  <!-- Services -->
+  <script src="services/user.service.js"></script>
+</body>
+
+</html>

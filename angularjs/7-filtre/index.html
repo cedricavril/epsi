@@ -1,0 +1,65 @@
+<!doctype html>
+<html ng-app="myApp" lang="FR-fr">
+
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <div ng-controller="UserController as user">
+    <p>{{user.name}}</p>
+    <p>{{user.name | lowercase}}</p>
+    <p>{{user.name | uppercase}}</p>
+
+    <p>{{user.jsonValue}}</p>
+    <p>{{user.jsonValue | json}}</p>
+
+    <p>{{user.dateValue}}</p>
+    <p>{{user.dateValue | date}}</p>
+    <p>{{user.dateValue | date: "short"}}</p>
+    <p>{{user.dateValue | date: "longDate"}}</p>
+    <p>{{user.dateValue | date: "dd-MMMM-yyyy"}}</p>
+
+    <p>{{user.elements | limitTo: 3}}</p>
+
+    <div ng-repeat="element in user.elements">
+      {{element}}
+    </div>
+    <hr>
+    <div ng-repeat="element in user.elements | limitTo: 3">
+      {{element}}
+    </div>
+    <hr>
+
+    <div ng-repeat="element in user.elements | filter: 'r'">
+      {{element}}
+    </div>
+    <hr>
+
+    <div ng-repeat="element in user.elements | orderBy">
+      {{element}}
+    </div>
+    <hr>
+    <div ng-repeat="element in user.elements | orderBy | limitTo: 3">
+      {{element}}
+    </div>
+    <hr>
+    <div ng-repeat="element in user.elements | orderBy | limitTo: 3 | filter: 'r'">
+      {{element}}
+    </div>
+    <hr>
+
+    <br>
+    <br>
+    <br>
+
+  </div>
+
+  <!-- Load all script here -->
+  <script src="app.js"></script>
+  <script src="user/user.controller.js"></script>
+</body>
+
+</html>

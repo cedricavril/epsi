@@ -1,0 +1,120 @@
+<!doctype html>
+<html ng-app="">
+
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+
+<body>
+	<h1>Les Directives AngularJS</h1>
+	<hr>
+
+	<div>
+		<h2>ng-init</h2>
+		<div ng-init="quantite = 2">
+			{{quantite}}
+		</div>
+		<!-- Créer une variable AngularJS-->
+
+		{{quantite}}
+
+	</div>
+
+	<hr>
+
+	<div>
+		<h2>ng-model</h2>
+		<input ng-model="valeurDuChamps" />
+		Hello {{valeurDuChamps}}!
+
+		<!-- Créer une variable AngularJS-->
+
+	</div>
+
+	<hr>
+
+	<div>
+		<h2>ng-repeat</h2>
+		<div ng-init="tableau=['orange', 'cerise', 'kiwi']"></div>
+		<div ng-repeat="element in tableau">
+			{{element}}
+		</div>
+
+		<div ng-init="tableauJson=[{name: 'Erwan'}, {name: 'Antoine'}]"></div>
+		<div ng-repeat="element in tableauJson">
+			{{element}}
+		</div>
+
+	</div>
+
+	<hr>
+
+	<div ng-init="conditionTrue = true; conditionFalse = false">
+		<h2>ng-if</h2>
+		<p ng-if="conditionFalse">Ceci est un texte caché</p>
+		<p ng-if="conditionTrue">Ceci est un texte affiché</p>
+	</div>
+
+	<hr>
+
+	<div ng-init="conditionTrue = true; conditionFalse = false">
+		<h2>ng-show / ng-hide</h2>
+		<p>ng-show</p>
+		<p ng-show="conditionTrue">Condition true</p>
+		<p ng-show="conditionFalse">Condition false</p>
+		<p>ng-hide</p>
+		<p ng-hide="conditionTrue">Condition true</p>
+		<p ng-hide="conditionFalse">Condition false</p>
+	</div>
+
+	<hr>
+
+	<div>
+		<h2>ng-class</h2>
+		<div ng-init="variableClass = 'app-class-css'" ng-class="variableClass">
+			Texte
+		</div>
+
+	</div>
+
+	<hr>
+
+	<div>
+		<h2>ng-click</h2>
+		<div ng-init="conditionBoolean = true">
+			<button ng-click="conditionBoolean = !conditionBoolean">Bouton</button>
+			<div ng-if="conditionBoolean">
+				<p>Texte affiché</p>
+			</div>
+		</div>
+
+	</div>
+
+	<div>
+		<h2>Exercice 1</h2>
+		<div ng-init="compteur = 0">
+			{{compteur}}
+			<button ng-click="compteur = compteur + 1">Bouton compteur</button>
+		</div>
+	</div>
+
+	<div>
+		<h2>Exercice 2</h2>
+		<div ng-init="isCursorInArea = false">
+			{{isCursorInArea}}
+			<div style="background-color: red" ng-mouseover="isCursorInArea = true" ng-mouseleave="isCursorInArea = false"> Zone
+				de survol</div>
+			<div ng-if="isCursorInArea">Texte sous condition</div>
+		</div>
+	</div>
+
+	<!-- <button onclick="alert('Voici une phrase');">Clic</button> -->
+
+	</br></br></br></br></br></br></br></br></br></br></br>
+
+
+</body>
+
+</html>

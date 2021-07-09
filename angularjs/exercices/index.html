@@ -1,0 +1,58 @@
+<!DOCTYPE html >
+<html ng-app="">
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Exercices angular</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='css/style.css'>
+    <script src="angularjs/angular.js"></script>
+</head>
+<body>
+
+    <div ng-init="
+        inputType = 'text';
+        class = 'greenColor';
+        texteSurvol = 'div survolée';
+        texteSansSurvol = 'div non survolée';
+        count = 0;
+    "></div>
+
+    <div class="container" ng-class='class'>
+        <p> Div avec la class {{class}}</p>
+    </div>
+
+    <div class="container" ng-class='class'>
+        <input type="{{inputType}}" />
+    </div>
+
+    <div ng-init="condTrue = true; condFalse = false;">
+        <div ng-if='condTrue'>
+            <div class="container" ng-class='class'>
+            <p> Div ng-if avec la class {{class}}</p>
+        </div>
+    </div>
+
+    <div ng-show='condTrue'>
+        <div class="container" ng-class='class'>
+            <p> Div ng-show avec la class {{class}}</p>
+        </div>
+    </div>
+
+    <div class="container" ng-class='class'>
+        <legend>Compteur</legend>
+        <button ng-click="count = count + 1">{{count}}</button><span></span>
+    </div>
+
+    <div ng-init="hoverText = texteSansSurvol">
+        <div class="container" ng-mouseenter="hoverText = texteSurvol" ng-mouseleave="hoverText = texteSansSurvol">
+            <p class="text">{{hoverText}}</p>
+        </div>
+    </div>
+
+    <div class="container" ng-class='class'>
+        <a href="data-binding.html">data binding</a>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,10 @@
+<p>{{user.name}}</p>
+
+<h3>GET "/"</h3>
+<p>{{userWithService.resultByGet}}</p>
+
+<h3>GET "/users"</h3>
+<button ng-click="userWithService.getUsers()">GET "/users"</button>
+<p>{{userWithService.tableResultByGet.length}}</p>
+<p>{{userWithService.tableResultByGet[16]}}</p>
+<p>{{userWithService.tableResultByGet[16].name}}</p>

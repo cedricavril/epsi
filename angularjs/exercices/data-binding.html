@@ -1,0 +1,108 @@
+<!DOCTYPE html >
+<html ng-app="myApp">
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Exercices angular - data binding</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='css/style.css'>
+    <script src="angularjs/angular.js"></script>
+</head>
+<body>
+
+    <div ng-controller="InputNumberController as inputNumberController">
+        <div class="container" ng-class="inputNumberController.classe">
+            <label>éloge des grandeurs <input ng-model="inputNumberController.grandeur" ng-change="inputNumberController.changement()" type="number"></input></label>
+        </div>
+        <div class="container" ng-class="inputNumberController.resultClass">
+            <p  ng-class = "inputNumberController.changementClass()" 
+                ng-model = "inputNumberController.resultText">
+                <i class = "arrow"></i> {{inputNumberController.changementText()}}
+            </p>
+        </div>
+    </div>
+
+<!-- utiliser plutôt ng-if -->
+<!-- <div class="container" ng-class="inputNumberController.classe">
+    <div ng-controller="TodoListController as todoListController">
+        <input type="text" placeholder="{{todoListController.nouveauChamp}}" ng-model = "todoListController.stringCourant"/>
+        <input type="submit" ng-click="todoListController.soumettreAjout()" />
+        <table>
+            <thead>
+                <th colspan="4">tableau de string</th>
+            </thead>
+            <tr ng-repeat="stringElement in todoListController.stringTableau">
+                <td>{{stringElement}}</td>
+                <td ng-class = "todoListController.majClasse">
+                    <input type="text" ng-change="todoListController.cacheToutSauf($index)" ng-model = "todoListController.majValeur"/>
+                    <button type="submit" ng-click="todoListController.majElement($index)">submit</button>
+                </td>
+                <td>
+                    <button ng-click="todoListController.supprElement($index)">del</button>
+                </td>
+                <td>
+                    <button ng-click="todoListController.afficheMajComposants()">update</button>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div> -->
+
+
+<div class="container">
+  <div ng-controller="TableController as tableController">
+    <pre>Sort by = {{tableController.propertyName}}; reverse = {{tableController.reverse}}</pre>
+    <hr/>
+    <button ng-click="tableController.sortBy(null)">Set to unsorted</button>
+    <hr/>
+    <table class="friends">
+      <tr>
+        <th>
+          <button ng-click="tableController.sortBy('name')">Name</button>
+          <span class="sortorder" ng-show="tableController.propertyName === 'name'" ng-class="{reverse: tableController.reverse}"></span>
+        </th>
+        <th>
+          <button ng-click="tableController.sortBy('phone')">Phone Number</button>
+          <span class="sortorder" ng-show="tableController.propertyName === 'phone'" ng-class="{reverse: tableController.reverse}"></span>
+        </th>
+        <th>
+          <button ng-click="tableController.sortBy('age')">Age</button>
+          <span class="sortorder" ng-show="tableController.propertyName === 'age'" ng-class="{reverse: tableController.reverse}"></span>
+        </th>
+      </tr>
+      <tr ng-repeat="friend in tableController.friends">
+        <td>{{friend.name}}</td>
+        <td>{{friend.phone}}</td>
+        <td>{{friend.age}}</td>
+      </tr>
+    </table>
+  </div>
+</div>  
+
+<form name="formForTest" ng-submit="formController.handleFormSubmit()" ng-controller="FormController as formController" class="container"><legend>Formulaire</legend>
+  {{formForTest.$valid}}
+  {{formForTest.user.$valid}}
+  <label>Nom : <input type="text" ng-model="formController.user.nom" required></label>{{formController.user.nom}}
+  <label>E-mail : <input type="email" ng-model="formController.user.email"></label>{{formController.user.email}}
+  <label>Password : <input type="password" name="password" ng-class="{'app-error': !formForTest.password.$valid}" ng-model="formController.user.motDePasse" ng-minlength="4" required></label>{{formController.user.motDePasse}}
+  <label>Nombre de cheveux : <input type="number" ng-model="formController.user.nombreDeCheveux"></label>{{formController.user.nombreDeCheveux}}
+  <label>Sexe : <input type="radio" ng-model="formController.user.sexe">Femme<input type="radio" ng-model="formController.user.sexe" value="Homme">Homme</label>{{formController.user.sexe}}
+  <label>Un string : <select ng-model = "formController.user.string" ng-options = "element for element in formController.listString" ></select></label>
+  <textarea placeholder="Talk about yourself..." rows="5" cols="33" ng-model="formController.user.description"></textarea>{{formController.user.description}}
+  <label class = "align-right"><input type="submit" > <input type="reset" ></label>
+</form>
+
+
+
+
+
+
+
+  <script src="js/app.js"></script>
+
+  <script src="js/data-binding.js"></script>
+  <script src="js/data-binding-array.js"></script>
+  <script src="js/data-binding-array-sorting.js"></script>
+  <script src="js/form.js"></script>
+</body>
+</html>

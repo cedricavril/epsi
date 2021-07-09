@@ -1,0 +1,161 @@
+<!DOCTYPE html >
+<html ng-app="myApp">
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Exercices angular - data binding</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='css/style.css'>
+    <script src="angularjs/angular.js"></script>
+</head>
+<body>
+
+    <div ng-controller="InputNumberController as inputNumberController">
+        <div class="container" ng-class="inputNumberController.classe">
+            <label>éloge des grandeurs <input ng-model="inputNumberController.grandeur" ng-change="inputNumberController.changement()" type="number"></input></label>
+        </div>
+        <div class="container" ng-class="inputNumberController.resultClass">
+            <p  ng-class = "inputNumberController.changementClass()" 
+                ng-model = "inputNumberController.resultText">
+                <i class = "arrow"></i> {{inputNumberController.changementText()}}
+            </p>
+        </div>
+    </div>
+
+<!-- utiliser plutôt ng-if -->
+<!-- <div class="container" ng-class="inputNumberController.classe">
+    <div ng-controller="TodoListController as todoListController">
+        <input type="text" placeholder="{{todoListController.nouveauChamp}}" ng-model = "todoListController.stringCourant"/>
+        <input type="submit" ng-click="todoListController.soumettreAjout()" />
+        <table>
+            <thead>
+                <th colspan="4">tableau de string</th>
+            </thead>
+            <tr ng-repeat="stringElement in todoListController.stringTableau">
+                <td>{{stringElement}}</td>
+                <td ng-class = "todoListController.majClasse">
+                    <input type="text" ng-change="todoListController.cacheToutSauf($index)" ng-model = "todoListController.majValeur"/>
+                    <button type="submit" ng-click="todoListController.majElement($index)">submit</button>
+                </td>
+                <td>
+                    <button ng-click="todoListController.supprElement($index)">del</button>
+                </td>
+                <td>
+                    <button ng-click="todoListController.afficheMajComposants()">update</button>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div> -->
+
+
+<div class="container">
+    <table ng-controller="TableController as tableController">
+        <thead>
+            <th>
+                <p>String</p>
+                <button >trier</button>
+            </th>
+            <th>
+                <p>String</p>
+                <button >trier</button>
+            </th>
+            <th>
+                <p>Number</p>
+                <button >trier</button>
+            </th>
+        </thead>
+        <tr ng-repeat="stringElement in tableController.troisDTable">
+            <td>{{stringElement.premierString}}</td>
+            <td>{{stringElement.deuxiemeString}}</td>
+            <td>{{stringElement.nombre}}</td>
+        </tr>
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<div ng-controller="TableController as tableController">
+    <button ng-click="sortBy(null)">Set to unsorted</button>
+    <hr/>
+    <table>
+      <tr>
+        <th>
+          <button ng-click="sortBy('tableController.troisDTable.premierString')">tri</button>
+          <span class="sortorder" ng-show="propertyName === 'tableController.troisDTable.premierString'" ng-class="{reverse: reverse}"></span>
+        </th>
+        <th>
+          <button ng-click="sortBy('tableController.troisDTable.deuxiemeString')">tri</button>
+          <span class="sortorder" ng-show="propertyName === 'tableController.troisDTable.deuxiemeString'" ng-class="{reverse: reverse}"></span>
+        </th>
+        <th>
+          <button ng-click="sortBy('tableController.troisDTable.nombre')">tri</button>
+          <span class="sortorder" ng-show="propertyName === 'tableController.troisDTable.nombre'" ng-class="{reverse: reverse}"></span>
+        </th>
+      </tr>
+      <tr ng-repeat="stringElement in tableController.troisDTable">
+        <td>{{stringElement.premierString}}</td>
+        <td>{{stringElement.deuxiemeString}}</td>
+        <td>{{stringElement.nombre}}</td>
+    </tr>
+    </table>
+  </div>
+  
+  
+
+
+
+
+
+
+  <div ng-controller="TableController as tableController">
+    <pre>Sort by = {{tableController.propertyName}}; reverse = {{tableController.reverse}}</pre>
+    <hr/>
+    <button ng-click="tableController.sortBy(null)">Set to unsorted</button>
+    <hr/>
+    <table class="friends">
+      <tr>
+        <th>
+          <button ng-click="tableController.sortBy('name')">Name</button>
+          <span class="sortorder" ng-show="tableController.propertyName === 'name'" ng-class="{reverse: tableController.reverse}"></span>
+        </th>
+        <th>
+          <button ng-click="tableController.sortBy('phone')">Phone Number</button>
+          <span class="sortorder" ng-show="tableController.propertyName === 'phone'" ng-class="{reverse: tableController.reverse}"></span>
+        </th>
+        <th>
+          <button ng-click="tableController.sortBy('age')">Age</button>
+          <span class="sortorder" ng-show="tableController.propertyName === 'age'" ng-class="{reverse: tableController.reverse}"></span>
+        </th>
+      </tr>
+      <tr ng-repeat="friend in tableController.friends">
+        <td>{{friend.name}}</td>
+        <td>{{friend.phone}}</td>
+        <td>{{friend.age}}</td>
+      </tr>
+    </table>
+  </div>
+  
+  
+
+
+
+
+
+
+
+
+    <script src="js/app.js"></script>
+    <script src="js/data-binding.js"></script>
+    <script src="js/data-binding-array.js"></script>
+    <script src="js/data-binding-array-sorting.js"></script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!doctype html>
+<html ng-app="myApp" >
+<meta charset="utf8">
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <h1>Directive</h1>
+  <hr>
+  <div ng-controller="AddTwoValuesController as addtwoValuesController">
+    <h2>Ajouter deux valeurs</h2>
+    <div app-display-values val-html-un=2 val-html-deux=3></div>
+
+
+  </div>
+  <!-- Load all script here -->
+  <script src="app.js"></script>
+  <script src="add-values/add-two-values-controller.js"></script>
+  <script src="directives/display-values.directive.js"></script>
+  <script src="directives/add-two-values.directive.js"></script>
+</body>
+
+</html>
